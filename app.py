@@ -322,10 +322,10 @@ def add_message():
 
     form = MessageForm()
 
-    if form.validate:
+    if form.validate():
         location = urlparse(request.json.get("location")).path
 
-        msg = Message(text=form.text.data)
+        msg = Message(text=request.json.get("text"))
         g.user.messages.append(msg)
         db.session.commit()
 

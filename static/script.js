@@ -65,9 +65,10 @@ async function addTweet(evt) {
         </div>
       </li>`);
         $messages.prepend($newMessage);
+        $messageModal.after('<div class="alert alert-success mb-4">Message added!</div>');
 
     } else {
-        alert('Message added!');
+        $messageModal.after('<div class="alert alert-success mb-4">Message added!</div>');
     }
 
     $messageModal.modal('hide');
